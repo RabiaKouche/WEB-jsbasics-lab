@@ -13,7 +13,8 @@ export const isNumberEven = i => {
  * @param {String} str
  */
 export const getFileExtension = str => {
-  // TODO
+  if (str.split('.').pop() === str) return false
+  return str.split('.').pop()
 };
 
 /**
