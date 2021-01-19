@@ -79,7 +79,22 @@ export const isPalindrome = str => {
  * Return the sum all the numbers you find, anywhere in the nest of arrays.
  */
 export const nestedSum = arr => {
-  // TODO
+  
+ 
+    return arr.reduce(function(accumulator, currentValue) {
+      if (typeof currentValue === "number") {
+        return accumulator + currentValue;
+      } else if (currentValue instanceof Array) {
+        return accumulator + nestedSum(currentValue);
+      } else {
+        return accumulator;
+      }
+    }, 0);
+  
+ 
+  
+
+
 };
 
 /**
