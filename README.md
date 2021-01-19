@@ -8,7 +8,7 @@
 
 |Nom|Prénom|login|email|
 |--|--|--|--|
-| *Nom auteur* | *Prénom auteur*| *login auteur* | *email auteur* |
+| *Kouche* | *Rabia*| *kr183707* | *rabia.kouche@etu.univ-lehavre.fr* |
 
 ## Travail à réaliser
 
