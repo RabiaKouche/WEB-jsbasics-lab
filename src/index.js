@@ -28,11 +28,8 @@ export const longestString = arr => {
   var emp = 0;
   
   for(var i = 0; i< arr.length; i++){
-
     if(arr[i].length > taille){
-
       if (typeof arr[i] === 'string'){
-        
         taille = arr[i].length;
         emp = i;
       }
@@ -49,7 +46,12 @@ export const longestString = arr => {
  * @param {String} str
  */
 export const reverseString = str => {
-  // TODO
+ 
+  var splitString = str.split(""); 
+  var reverseArray = splitString.reverse();
+  var joinArray = reverseArray.join(""); 
+  
+  return joinArray; 
 };
 
 /**
