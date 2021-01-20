@@ -145,7 +145,15 @@ export const retireDe = (tab, ...elms) => {
  * // [5, 4, 3, 2, 1, 0]
  */
 export const aplatirRecursif = tab => {
-  //TODO
+  var ret = [];
+  for(var i = 0; i < tab.length; i++) {
+      if(Array.isArray(tab[i])) {
+          ret = ret.concat(aplatirRecursif(tab[i]));
+      } else {
+          ret.push(tab[i]);
+      }
+  }
+  return ret;
 };
 
 /**
