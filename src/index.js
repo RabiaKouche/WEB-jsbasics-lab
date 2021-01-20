@@ -116,7 +116,21 @@ export const nestedSum = arr => {
  * @param  {objects} elms
  */
 export const retireDe = (tab, ...elms) => {
-  // TODO
+  
+  for(var i = 0; i< tab.length; i++){
+    for(var j =0; j< elms.length; j++){
+      if(tab[i] === elms[j]){
+        var identique = tab[i];
+        for(var k = 0; k< tab.length; k++){
+          if(identique === tab[k]){
+            tab.splice(k, 1);
+          }
+        }
+      }
+    }
+
+  }
+  return tab;
 };
 
 /**
