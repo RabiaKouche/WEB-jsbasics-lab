@@ -208,6 +208,10 @@ describe('JS Basics Tests', () => {
    *
    */
   describe('Test permutations', () => {
+    test("permutation tab quand c'est vide", () => {
+      expect(permutations([])).toEqual([]);
+    });
+
     test('permutation tab avec 1 élément', () => {
       expect(permutations([1])).toEqual([1]);
     });
@@ -263,7 +267,28 @@ describe('JS Basics Tests', () => {
    *
    */
   describe('Test echantillon', () => {
-    // TODO
+
+    test("retourner l'élément de milieu de tableau", () =>{
+      const mockMath = Object.create(global.Math);
+      mockMath.random = () => 0.5;
+      global.Math = mockMath;
+      expect(echantillon([1,2,3])).toEqual(2);
+    });
+
+    test("retourner le premier élément de tableau", () =>{
+      const mockMath = Object.create(global.Math);
+      mockMath.random = () => 0.0;
+      global.Math = mockMath;
+      expect(echantillon([1,2,3])).toEqual(1);
+    });
+
+    test("retourner le dernier élément de tableau", () =>{
+      const mockMath = Object.create(global.Math);
+      mockMath.random = () => 0.9;
+      global.Math = mockMath;
+      expect(echantillon([1,2,3])).toEqual(3);
+    });
+
   });
 
   /**
