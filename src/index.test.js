@@ -8,6 +8,7 @@ import {
   retireDe,
   aplatirRecursif,
   permutations,
+  nMax,
 } from '../src';
 
 describe('JS Basics Tests', () => {
@@ -233,8 +234,9 @@ describe('JS Basics Tests', () => {
    *
    * Attention aux cas particuliers (tableaux à 0, 1 ou 2 éléments.)
    */
+
   describe('Test enumerer', () => {
-    // TODO
+   
   });
 
   /**
@@ -252,7 +254,27 @@ describe('JS Basics Tests', () => {
    * nMax(['1', '2', '3'], 2); // []
    *
    */
+
+   
   describe('Test nMax', () => {
-    // TODO
+    test('nMax([1, 2, 3])', () => {
+      expect(nMax([1, 2, 3])).toEqual([3]);
+    });
+
+    test('nMax([1, 2, 3], 2)', ()=> {
+      expect(nMax([1, 2, 3], 2)).toEqual([3, 2]);
+    });
+
+    test('nMax([1, 2, 3], 20)', () => {
+      expect(nMax([1, 2, 3], 20)).toEqual([1, 2, 3]);
+    });
+
+    test("nMax(['1', '2', 3], 2)", ()=> {
+      expect(nMax(['1', '2', 3], 2)).toEqual([3]);
+    });
+
+    test("nMax(['1', '2', '3'], 2)", ()=> {
+      expect(nMax(['1', '2', '3'], 2)).toEqual([]);
+    })
   });
 });

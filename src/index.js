@@ -208,7 +208,7 @@ export const echantillon = tab => tab[Math.floor(Math.random() * tab.length)];
  * @param {string} fin
  */
 export const enumerer = (tab, separateur = ', ', fin = separateur) => {
-  // TODO
+  
 };
 
 /**
@@ -218,6 +218,26 @@ export const enumerer = (tab, separateur = ', ', fin = separateur) => {
  *
  * Utiliser `Array.prototype.sort()`, l'opérateur de destructuration (...) et `Array.prototype.slice()`
  */
+
 export const nMax = (tab, n = 1) => {
-  //TODO
+  let tab1 = [...tab].sort() // le destructuring pour ne pas modifier 'tab'
+  let copie=[];
+
+  for (var i = 0; i< n; i++){
+
+  
+      if(typeof tab1[tab1.length-1-i] === 'number'){
+        if(n<=tab1.length) {
+          copie[i] = tab1[tab1.length-1-i]
+        }else{
+          copie = tab1;
+          }
+          
+       
+      } 
+
+  
+}
+  return copie;
+
 };
