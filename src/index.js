@@ -4,7 +4,7 @@
  * @param {Number} i
  */
 export const isNumberEven = i => {
-  return i % 2 === 0
+  return i % 2 === 0;
 };
 
 /**
@@ -13,8 +13,8 @@ export const isNumberEven = i => {
  * @param {String} str
  */
 export const getFileExtension = str => {
-  if (str.split('.').pop() === str) return false
-  return str.split('.').pop()
+  if (str.split('.').pop() === str){ return false;}
+  return str.split('.').pop();
 };
 
 /**
@@ -36,7 +36,7 @@ export const longestString = arr => {
     }
 
   }
-    return arr[emp]
+    return arr[emp];
   
 };
 
@@ -214,11 +214,11 @@ export const enumerer = (tab, separateur = ', ', fin = separateur) => {
     }else if(tab.length === 1){
       return tab.join();
     }else if(tab.length === 2){
-      return tab.join(' et ');
+      return tab.join(` ${fin} `);
     }else{
       var val = tab[tab.length-1];
-      tab.pop()
-      return (tab.join(', ')+" et "+val)
+      tab.pop();
+      return (`${tab.join(', ')} ${fin} ${val}`);
     }
     };
 
@@ -231,7 +231,7 @@ export const enumerer = (tab, separateur = ', ', fin = separateur) => {
  */
 
 export const nMax = (tab, n = 1) => {
-  let tab1 = [...tab].sort() // le destructuring pour ne pas modifier 'tab'
+  let tab1 = [...tab].sort() ;// le destructuring pour ne pas modifier 'tab'
   let copie=[];
 
   for (var i = 0; i< n; i++){
@@ -239,7 +239,7 @@ export const nMax = (tab, n = 1) => {
   
       if(typeof tab1[tab1.length-1-i] === 'number'){
         if(n<=tab1.length) {
-          copie[i] = tab1[tab1.length-1-i]
+          copie[i] = tab1[tab1.length-1-i];
         }else{
           copie = tab1;
           }

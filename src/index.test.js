@@ -10,6 +10,7 @@ import {
   permutations,
   nMax,
   enumerer,
+  echantillon,
 } from '../src';
 
 describe('JS Basics Tests', () => {
@@ -207,7 +208,49 @@ describe('JS Basics Tests', () => {
    *
    */
   describe('Test permutations', () => {
-    // TODO
+    test('permutation tab avec 1 élément', () => {
+      expect(permutations([1])).toEqual([1]);
+    });
+
+    test('permutation tab avec 2 éléments', () => {
+      expect(permutations([1, 2])).toEqual([[1, 2], [2,1]]);
+    });
+
+    test('permutation tab plusieurs éléments sans doublons', () => {
+      expect(permutations([0, 1, 2])).toEqual([ [ 0, 1, 2 ],
+                                                [ 0, 2, 1 ],
+                                                [ 1, 0, 2 ],
+                                                [ 1, 2, 0 ],
+                                                [ 2, 0, 1 ],
+                                                [ 2, 1, 0 ] ]);
+    });
+
+    test('permutation tab avec doublons', () => {
+      expect(permutations([ 1, 2, 2])).toEqual([ [ 1, 2, 2 ],
+                                                 [ 1, 2, 2 ],
+                                                 [ 2, 1, 2 ],
+                                                 [ 2, 2, 1 ],
+                                                 [ 2, 1, 2 ],
+                                                 [ 2, 2, 1 ] ]);
+    });
+
+    test('permutation tab avec que des doublons', () => {
+      expect(permutations([ 2, 2, 2])).toEqual([ [ 2, 2, 2 ],
+                                                 [ 2, 2, 2 ],
+                                                 [ 2, 2, 2 ],
+                                                 [ 2, 2, 2 ],
+                                                 [ 2, 2, 2 ],
+                                                 [ 2, 2, 2 ] ]);
+    });
+
+    test('permutation tab avec deux éléments double', () => {
+      expect(permutations([ 2, 2 ])).toEqual([ [ 2, 2 ],
+                                               [ 2, 2 ] ]);
+    });
+
+
+
+    
   });
 
   /**
@@ -239,19 +282,19 @@ describe('JS Basics Tests', () => {
   describe('Test enumerer', () => {
     test('tableau à 0 élément', () => {
       expect(enumerer([], ',', 'et')).toEqual('');
-    })    
+    });   
 
     test('tableau à 1 élément', () => {
-      expect(enumerer(['Fifi'], ',', 'et')).toEqual('Fifi')
-    })
+      expect(enumerer(['Fifi'], ',', 'et')).toEqual('Fifi');
+    });
    
     test('tableau à 2 éléments', () => {
-      expect(enumerer(['Riri','Fifi'], ',', 'et')).toEqual('Riri et Fifi')
-    })
+      expect(enumerer(['Riri','Fifi'], ',', 'et')).toEqual('Riri et Fifi');
+    });
 
     test('tableau à plusieurs éléments', () => {
-      expect(enumerer(['Riri','Fifi', 'Loulou'], ',', 'et')).toEqual('Riri, Fifi et Loulou')
-    })
+      expect(enumerer(['Riri','Fifi', 'Loulou'], ',', 'et')).toEqual('Riri, Fifi et Loulou');
+    });
   });
 
   /**
@@ -290,6 +333,6 @@ describe('JS Basics Tests', () => {
 
     test("nMax(['1', '2', '3'], 2)", ()=> {
       expect(nMax(['1', '2', '3'], 2)).toEqual([]);
-    })
+    });
   });
 });
