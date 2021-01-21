@@ -9,6 +9,7 @@ import {
   aplatirRecursif,
   permutations,
   nMax,
+  enumerer,
 } from '../src';
 
 describe('JS Basics Tests', () => {
@@ -236,7 +237,21 @@ describe('JS Basics Tests', () => {
    */
 
   describe('Test enumerer', () => {
+    test('tableau à 0 élément', () => {
+      expect(enumerer([], ',', 'et')).toEqual('');
+    })    
+
+    test('tableau à 1 élément', () => {
+      expect(enumerer(['Fifi'], ',', 'et')).toEqual('Fifi')
+    })
    
+    test('tableau à 2 éléments', () => {
+      expect(enumerer(['Riri','Fifi'], ',', 'et')).toEqual('Riri et Fifi')
+    })
+
+    test('tableau à plusieurs éléments', () => {
+      expect(enumerer(['Riri','Fifi', 'Loulou'], ',', 'et')).toEqual('Riri, Fifi et Loulou')
+    })
   });
 
   /**

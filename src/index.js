@@ -208,8 +208,19 @@ export const echantillon = tab => tab[Math.floor(Math.random() * tab.length)];
  * @param {string} fin
  */
 export const enumerer = (tab, separateur = ', ', fin = separateur) => {
-  
-};
+
+    if(tab.length === 0){
+      return '';
+    }else if(tab.length === 1){
+      return tab.join();
+    }else if(tab.length === 2){
+      return tab.join(' et ');
+    }else{
+      var val = tab[tab.length-1];
+      tab.pop()
+      return (tab.join(', ')+" et "+val)
+    }
+    };
 
 /**
  * Retourne, sous forme d'un tableau, les `n` plus grand nombres du tableau `tab` passé en paramètre.
